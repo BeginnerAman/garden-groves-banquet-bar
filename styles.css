@@ -939,6 +939,229 @@ body.menu-open {
 }
 
 /* ============================================================
+   TRUST BADGE
+   ============================================================ */
+.trust-badge {
+  background: linear-gradient(135deg, var(--color-olive-deep) 0%, var(--color-matte-black) 100%);
+  padding: var(--space-lg) 0;
+  border-top: 1px solid rgba(201, 169, 78, 0.15);
+  border-bottom: 1px solid rgba(201, 169, 78, 0.15);
+}
+
+.trust-badge__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.trust-badge__google-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.trust-badge__stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.trust-badge__star {
+  width: 18px;
+  height: 18px;
+  color: var(--color-gold);
+}
+
+.trust-badge__text {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 400;
+  color: var(--color-cream);
+  letter-spacing: 0.02em;
+}
+
+.trust-badge__text strong {
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+/* ============================================================
+   SIGNATURE MENU — Tabbed Interface
+   ============================================================ */
+
+/* Fade-in for tab panels */
+@keyframes menuFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu {
+  padding: var(--space-4xl) 0;
+  background-color: var(--bg-primary);
+}
+
+/* ---------- Tab Buttons ---------- */
+.menu__tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-2xl);
+  flex-wrap: wrap;
+}
+
+.menu__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.7rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--text-body);
+  background: transparent;
+  border: 2px solid var(--color-cream);
+  border-radius: 50px;
+  cursor: pointer;
+  transition:
+    background-color var(--duration) var(--ease-smooth),
+    border-color var(--duration) var(--ease-smooth),
+    color var(--duration-fast) var(--ease-smooth),
+    transform var(--duration-fast) var(--ease-smooth),
+    box-shadow var(--duration) var(--ease-smooth);
+}
+
+.menu__tab-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: opacity var(--duration-fast) var(--ease-smooth);
+}
+
+.menu__tab:hover {
+  border-color: var(--color-gold);
+  color: var(--color-olive-deep);
+  transform: translateY(-2px);
+}
+
+.menu__tab:hover .menu__tab-icon {
+  opacity: 1;
+}
+
+.menu__tab.active {
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-soft));
+  border-color: var(--color-gold);
+  color: var(--color-black);
+  box-shadow: var(--shadow-btn);
+}
+
+.menu__tab.active .menu__tab-icon {
+  opacity: 1;
+}
+
+/* ---------- Tab Panels ---------- */
+.menu__panels {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.menu__panel {
+  display: none;
+}
+
+.menu__panel.active {
+  display: block;
+  animation: menuFadeIn 0.45s var(--ease-smooth) forwards;
+}
+
+/* ---------- Menu Card ---------- */
+.menu-card {
+  background: var(--color-white);
+  border-radius: 16px;
+  padding: var(--space-xl) var(--space-2xl);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(201, 169, 78, 0.1);
+}
+
+/* Individual menu item */
+.menu-card__item {
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--color-cream);
+}
+
+.menu-card__item:last-child {
+  border-bottom: none;
+  padding-bottom: var(--space-sm);
+}
+
+.menu-card__item:first-child {
+  padding-top: var(--space-sm);
+}
+
+/* Item header: name ... price */
+.menu-card__item-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+}
+
+.menu-card__item-name {
+  font-family: var(--font-heading);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--text-heading);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Elegant dotted line filler */
+.menu-card__item-dots {
+  flex: 1;
+  border-bottom: 2px dotted rgba(201, 169, 78, 0.3);
+  min-width: 30px;
+  align-self: center;
+  margin-bottom: 4px;
+}
+
+.menu-card__item-price {
+  font-family: var(--font-heading);
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--color-gold);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.menu-card__item-price small {
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+/* Item description */
+.menu-card__item-desc {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 300;
+  color: var(--text-body);
+  opacity: 0.65;
+  line-height: 1.6;
+  margin-top: var(--space-xs);
+  max-width: 90%;
+}
+
+/* ============================================================
    Placeholder content to test the scroll behaviour
    ============================================================ */
 .content-placeholder {
@@ -983,6 +1206,10 @@ body.menu-open {
     grid-column: 1 / -1;
     max-width: 480px;
     margin: 0 auto;
+  }
+
+  .menu-card {
+    padding: var(--space-lg);
   }
 }
 
@@ -1045,5 +1272,49 @@ body.menu-open {
   .offering-card__visual {
     height: 180px;
   }
-}
 
+  /* Trust badge stacks vertically */
+  .trust-badge__inner {
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+
+  /* Menu tabs scroll horizontally */
+  .menu__tabs {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: var(--space-xs);
+    gap: var(--space-xs);
+  }
+
+  .menu__tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu__tab {
+    flex-shrink: 0;
+    font-size: var(--fs-xs);
+    padding: 0.6rem 1.1rem;
+  }
+
+  .menu-card {
+    padding: var(--space-md);
+    border-radius: 12px;
+  }
+
+  .menu-card__item-name {
+    font-size: var(--fs-sm);
+  }
+
+  .menu-card__item-price {
+    font-size: var(--fs-sm);
+  }
+
+  .menu-card__item-desc {
+    max-width: 100%;
+  }
+}

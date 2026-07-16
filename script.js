@@ -103,4 +103,58 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fallback: show all immediately
     revealElements.forEach(el => el.classList.add('revealed'));
   }
+
+  // ---- Signature Menu — Tab Switching ----
+  const tabButtons = document.querySelectorAll('.menu__tab');
+  const tabPanels  = document.querySelectorAll('.menu__panel');
+
+  if (tabButtons.length && tabPanels.length) {
+    const switchTab = (targetTab) => {
+      // Deactivate all tabs
+      tabButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+
+      // Hide all panels
+      tabPanels.forEach(panel => {
+        panel.classList.remove('active');
+      });
+
+      // Activate the clicked tab
+      targetTab.classList.add('active');
+      targetTab.setAttribute('aria-selected', 'true');
+
+      // Show the corresponding panel (re-triggers the CSS animation)
+      const panelId = targetTab.getAttribute('aria-controls');
+      const targetPanel = document.getElementById(panelId);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
+    };
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => switchTab(btn));
+    });
+
+    // Keyboard support — arrow keys to navigate tabs
+    tabButtons.forEach((btn, index) => {
+      btn.addEventListener('keydown', (e) => {
+        let newIndex = index;
+
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          newIndex = (index + 1) % tabButtons.length;
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          newIndex = (index - 1 + tabButtons.length) % tabButtons.length;
+        }
+
+        if (newIndex !== index) {
+          switchTab(tabButtons[newIndex]);
+          tabButtons[newIndex].focus();
+        }
+      });
+    });
+  }
 });

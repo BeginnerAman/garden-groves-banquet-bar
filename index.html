@@ -270,6 +270,205 @@
     </div><!-- /.container -->
   </section>
 
+  <!-- ============================================================
+       TRUST BADGE
+       ============================================================ -->
+  <section class="trust-badge" aria-label="Customer rating">
+    <div class="container trust-badge__inner">
+      <!-- Google icon -->
+      <svg class="trust-badge__google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+      </svg>
+
+      <!-- Stars -->
+      <div class="trust-badge__stars" aria-label="4.2 out of 5 stars">
+        <!-- Full star 1 -->
+        <svg class="trust-badge__star" viewBox="0 0 24 24" aria-hidden="true">
+          <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="currentColor"/>
+        </svg>
+        <!-- Full star 2 -->
+        <svg class="trust-badge__star" viewBox="0 0 24 24" aria-hidden="true">
+          <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="currentColor"/>
+        </svg>
+        <!-- Full star 3 -->
+        <svg class="trust-badge__star" viewBox="0 0 24 24" aria-hidden="true">
+          <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="currentColor"/>
+        </svg>
+        <!-- Full star 4 -->
+        <svg class="trust-badge__star" viewBox="0 0 24 24" aria-hidden="true">
+          <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="currentColor"/>
+        </svg>
+        <!-- Half star 5 -->
+        <svg class="trust-badge__star trust-badge__star--half" viewBox="0 0 24 24" aria-hidden="true">
+          <defs>
+            <linearGradient id="halfStarGrad">
+              <stop offset="40%" stop-color="currentColor"/>
+              <stop offset="40%" stop-color="currentColor" stop-opacity="0.2"/>
+            </linearGradient>
+          </defs>
+          <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" fill="url(#halfStarGrad)"/>
+        </svg>
+      </div>
+
+      <p class="trust-badge__text">
+        Rated <strong>4.2 / 5</strong> on Google by our lovely guests.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SIGNATURE MENU
+       ============================================================ -->
+  <section class="menu" id="menu">
+    <div class="container">
+
+      <!-- Section Header -->
+      <header class="section-header">
+        <div class="section-header__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 2C12 6 4 14 4 20c0 6 5.4 10 12 10s12-4 12-10C28 14 20 6 16 2zM14 24c-3-2-5-5.5-5-9 2 0 5 1.5 7 4.5-1-3.5 0-7 2-9.5 1.5 3 2.5 6.5 1.5 10 2-2 4.5-3.5 6-3.5-.5 4-3 7-6.5 8.5" fill="currentColor"/>
+          </svg>
+        </div>
+        <h2 class="section-header__title">Our Signature Offerings</h2>
+        <p class="section-header__subtitle">
+          A curated selection of dishes, drinks, and celebration packages crafted to perfection.
+        </p>
+      </header>
+
+      <!-- Tab Buttons -->
+      <div class="menu__tabs" role="tablist" aria-label="Menu categories">
+        <button class="menu__tab active" role="tab" aria-selected="true" aria-controls="tab-food" id="btn-food" data-tab="food">
+          <svg class="menu__tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>
+          </svg>
+          <span>Food</span>
+        </button>
+        <button class="menu__tab" role="tab" aria-selected="false" aria-controls="tab-drinks" id="btn-drinks" data-tab="drinks">
+          <svg class="menu__tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 2h8l-4 10v8"/><line x1="6" y1="20" x2="18" y2="20"/><line x1="6" y1="6" x2="18" y2="6"/>
+          </svg>
+          <span>Drinks</span>
+        </button>
+        <button class="menu__tab" role="tab" aria-selected="false" aria-controls="tab-banquets" id="btn-banquets" data-tab="banquets">
+          <svg class="menu__tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+          <span>Banquet Packages</span>
+        </button>
+      </div>
+
+      <!-- Tab Panels -->
+      <div class="menu__panels">
+
+        <!-- FOOD PANEL -->
+        <div class="menu__panel active" id="tab-food" role="tabpanel" aria-labelledby="btn-food">
+          <div class="menu-card">
+
+            <div class="menu-card__item">
+              <div class="menu-card__item-header">
+                <h4 class="menu-card__item-name">Paneer Tikka Platter</h4>
+                <span class="menu-card__item-dots" aria-hidden="true"></span>
+                <span class="menu-card__item-price">₹425</span>
+              </div>
+              <p class="menu-card__item-desc">Smoky cottage cheese cubes marinated in aromatic spices, grilled to perfection, served with mint chutney.</p>
+            </div>
+
+            <div class="menu-card__item">
+              <div class="menu-card__item-header">
+                <h4 class="menu-card__item-name">Garden Groves Special Curry</h4>
+                <span class="menu-card__item-dots" aria-hidden="true"></span>
+                <span class="menu-card__item-price">₹495</span>
+              </div>
+              <p class="menu-card__item-desc">Our chef's signature slow-cooked curry with a secret blend of 18 spices, served with butter naan.</p>
+            </div>
+
+            <div class="menu-card__item">
+              <div class="menu-card__item-header">
+                <h4 class="menu-card__item-name">Tandoori Grilled Chicken</h4>
+                <span class="menu-card__item-dots" aria-hidden="true"></span>
+                <span class="menu-card__item-price">₹545</span>
+              </div>
+              <p class="menu-card__item-desc">Half chicken marinated overnight in yogurt and spices, charred in our traditional clay oven.</p>
+            </div>
+
+            <div class="menu-card__item">
+              <div class="menu-card__item-header">
+                <h4 class="menu-card__item-name">Truffle Mushroom Risotto</h4>
+                <span class="menu-card__item-dots" aria-hidden="true"></span>
+                <span class="menu-card__item-price">₹575</span>
+              </div>
+              <p class="menu-card__item-desc">Creamy arborio rice with wild forest mushrooms, finished with truffle oil and aged parmesan.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- DRINKS PANEL -->
+        <div class="menu__panel" id="tab-drinks" role="tabpanel" aria-labelledby="btn-drinks">
+          <div class="menu-card">
+
+            <div class="menu-card__item">
+              <div class="menu-card__item-header">
+                <h4 class="menu-card__item-name">Garden Grove Sunset</h4>
+                <span class="menu-card__item-dots" aria-hidden="true"></span>
+                <span class="menu-card__item-price">₹375</span>
+              </div>
+              <p class="menu-card__item-desc">Our signature cocktail — premium vodka, passion fruit, elderflower syrup, and a champagne float.</p>
+            </div>
+
+            <div class="menu-card__item">
+              <div class="menu-card__item-header">
+                <h4 class="menu-card__item-name">Olive Old Fashioned</h4>
+                <span class="menu-card__item-dots" aria-hidden="true"></span>
+                <span class="menu-card__item-price">₹425</span>
+              </div>
+              <p class="menu-card__item-desc">Bourbon whiskey, artisan olive bitters, smoked orange peel, and a hint of maple — stirred, not shaken.</p>
+            </div>
+
+            <div class="menu-card__item">
+              <div class="menu-card__item-header">
+                <h4 class="menu-card__item-name">Fresh Basil Mojito</h4>
+                <span class="menu-card__item-dots" aria-hidden="true"></span>
+                <span class="menu-card__item-price">₹295</span>
+              </div>
+              <p class="menu-card__item-desc">Garden-fresh basil and mint, muddled with lime, raw cane sugar, and sparkling soda. Also available virgin.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- BANQUET PACKAGES PANEL -->
+        <div class="menu__panel" id="tab-banquets" role="tabpanel" aria-labelledby="btn-banquets">
+          <div class="menu-card">
+
+            <div class="menu-card__item">
+              <div class="menu-card__item-header">
+                <h4 class="menu-card__item-name">Silver Celebration Package</h4>
+                <span class="menu-card__item-dots" aria-hidden="true"></span>
+                <span class="menu-card__item-price">₹1,199 <small>/plate</small></span>
+              </div>
+              <p class="menu-card__item-desc">Perfect for birthdays and social gatherings — includes welcome drinks, 3-course dinner, basic décor, and DJ setup for up to 100 guests.</p>
+            </div>
+
+            <div class="menu-card__item">
+              <div class="menu-card__item-header">
+                <h4 class="menu-card__item-name">Gold Wedding Package</h4>
+                <span class="menu-card__item-dots" aria-hidden="true"></span>
+                <span class="menu-card__item-price">₹2,499 <small>/plate</small></span>
+              </div>
+              <p class="menu-card__item-desc">Our premium wedding experience — champagne reception, 7-course gourmet dinner, luxury floral décor, live entertainment, and a dedicated event coordinator.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /.menu__panels -->
+    </div><!-- /.container -->
+  </section>
+
   <!-- Extra height so the page scrolls (will be replaced with real content) -->
   <div class="content-placeholder" aria-hidden="true"></div>
 
