@@ -1,5 +1,5 @@
 /* ============================================================
-   Garden Groves — Navbar Interactions
+   Garden Groves — Interactions & Smooth Scroll
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -50,8 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Close mobile menu when a link is clicked ----
   mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
       closeMenu();
+      // Smooth scroll with offset for mobile links too
+      smoothScrollTo(e, link);
     });
   });
 
@@ -63,9 +65,37 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ---- Active link highlighting based on current section ----
-  // (Will become functional as sections are added in future tasks)
+  // ---- Smooth Scroll with Navbar Offset ----
+  const getNavHeight = () => navbar.offsetHeight + 12; // 12px extra breathing room
+
+  const smoothScrollTo = (e, anchor) => {
+    const href = anchor.getAttribute('href');
+
+    // Redirect #book to WhatsApp / contact section
+    if (href === '#book') {
+      e.preventDefault();
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        const top = contactSection.getBoundingClientRect().top + window.scrollY - getNavHeight();
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+      return;
+    }
+
+    // Normal section scroll with offset
+    if (href && href.startsWith('#') && href.length > 1) {
+      const target = document.getElementById(href.slice(1));
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - getNavHeight();
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    }
+  };
+
+  // ---- Active link highlighting ----
   const navLinks = document.querySelectorAll('.navbar__link');
+  const allNavAnchors = document.querySelectorAll('.navbar__link, .navbar__cta-desktop');
 
   const setActiveLink = (hash) => {
     navLinks.forEach(link => {
@@ -73,14 +103,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Set Home as active by default
-  setActiveLink('#home');
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      setActiveLink(link.getAttribute('href'));
+  // Click handlers — smooth scroll for all nav links
+  allNavAnchors.forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      const href = anchor.getAttribute('href');
+      if (href) setActiveLink(href);
+      smoothScrollTo(e, anchor);
     });
   });
+
+  // Hero CTAs also smooth-scroll
+  document.querySelectorAll('.hero__btn').forEach(btn => {
+    btn.addEventListener('click', (e) => smoothScrollTo(e, btn));
+  });
+
+  // ---- Scroll Spy — auto-highlight active section ----
+  const sections = document.querySelectorAll('section[id]');
+
+  if (sections.length && 'IntersectionObserver' in window) {
+    const spyObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActiveLink('#' + entry.target.id);
+          }
+        });
+      },
+      { rootMargin: `-${getNavHeight()}px 0px -40% 0px`, threshold: 0 }
+    );
+
+    sections.forEach(section => spyObserver.observe(section));
+  } else {
+    setActiveLink('#home');
+  }
 
   // ---- Scroll-Reveal for Offering Cards ----
   const revealElements = document.querySelectorAll('.offering-card');
