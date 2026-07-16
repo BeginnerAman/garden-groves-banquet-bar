@@ -66,12 +66,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ---- Smooth Scroll with Navbar Offset ----
-  const getNavHeight = () => navbar.offsetHeight + 12; // 12px extra breathing room
+  const getNavHeight = () => navbar.offsetHeight + 12;
 
+  /**
+   * Scrolls to the section referenced by `anchor`'s href.
+   * If the anchor has a `data-target-tab` attribute, the corresponding
+   * menu tab is automatically activated after scrolling completes.
+   */
   const smoothScrollTo = (e, anchor) => {
     const href = anchor.getAttribute('href');
+    const targetTab = anchor.getAttribute('data-target-tab');
 
-    // Redirect #book to WhatsApp / contact section
+    // Redirect #book to contact section
     if (href === '#book') {
       e.preventDefault();
       const contactSection = document.getElementById('contact');
@@ -89,8 +95,35 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const top = target.getBoundingClientRect().top + window.scrollY - getNavHeight();
         window.scrollTo({ top, behavior: 'smooth' });
+
+        // Auto-switch menu tab if data-target-tab is present
+        if (targetTab) {
+          activateTabAfterScroll(targetTab);
+        }
       }
     }
+  };
+
+  /**
+   * Activates the specified tab after a short delay to allow
+   * the smooth scroll to settle before the panel fades in.
+   */
+  const activateTabAfterScroll = (tabName) => {
+    const TAB_MAP = {
+      'food':     'btn-food',
+      'drinks':   'btn-drinks',
+      'banquets': 'btn-banquets'
+    };
+
+    const btnId = TAB_MAP[tabName];
+    if (!btnId) return;
+
+    setTimeout(() => {
+      const tabBtn = document.getElementById(btnId);
+      if (tabBtn && typeof switchTab === 'function') {
+        switchTab(tabBtn);
+      }
+    }, 450); // wait for smooth scroll to land
   };
 
   // ---- Active link highlighting ----
@@ -103,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Click handlers — smooth scroll for all nav links
+  // Smooth scroll for all navbar links
   allNavAnchors.forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       const href = anchor.getAttribute('href');
@@ -112,9 +145,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Hero CTAs also smooth-scroll
+  // Hero CTAs smooth-scroll
   document.querySelectorAll('.hero__btn').forEach(btn => {
     btn.addEventListener('click', (e) => smoothScrollTo(e, btn));
+  });
+
+  // Offering card links — scroll to menu + switch tab
+  document.querySelectorAll('.offering-card__link[data-target-tab]').forEach(link => {
+    link.addEventListener('click', (e) => smoothScrollTo(e, link));
   });
 
   // ---- Scroll Spy — auto-highlight active section ----
@@ -146,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add('revealed');
-            revealObserver.unobserve(entry.target); // animate only once
+            revealObserver.unobserve(entry.target);
           }
         });
       },
@@ -155,7 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
   } else {
-    // Fallback: show all immediately
     revealElements.forEach(el => el.classList.add('revealed'));
   }
 
@@ -163,24 +200,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const tabButtons = document.querySelectorAll('.menu__tab');
   const tabPanels  = document.querySelectorAll('.menu__panel');
 
+  // Hoist switchTab so it's accessible from activateTabAfterScroll
+  let switchTab = null;
+
   if (tabButtons.length && tabPanels.length) {
-    const switchTab = (targetTab) => {
-      // Deactivate all tabs
+    switchTab = (targetTab) => {
       tabButtons.forEach(btn => {
         btn.classList.remove('active');
         btn.setAttribute('aria-selected', 'false');
       });
 
-      // Hide all panels
       tabPanels.forEach(panel => {
         panel.classList.remove('active');
       });
 
-      // Activate the clicked tab
       targetTab.classList.add('active');
       targetTab.setAttribute('aria-selected', 'true');
 
-      // Show the corresponding panel (re-triggers the CSS animation)
       const panelId = targetTab.getAttribute('aria-controls');
       const targetPanel = document.getElementById(panelId);
       if (targetPanel) {

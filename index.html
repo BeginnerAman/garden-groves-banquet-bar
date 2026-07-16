@@ -190,7 +190,7 @@
             <p class="offering-card__desc">
               Savor authentic family recipes and global cuisines crafted by expert chefs in a warm, welcoming ambience.
             </p>
-            <a href="#restaurant" class="offering-card__link">
+            <a href="#menu" class="offering-card__link" data-target-tab="food">
               <span>Explore Menu</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12"/>
@@ -221,7 +221,7 @@
             <p class="offering-card__desc">
               Unwind with our signature artisanal cocktails, premium spirits, and vibrant music during our exclusive happy hours.
             </p>
-            <a href="#bar" class="offering-card__link">
+            <a href="#menu" class="offering-card__link" data-target-tab="drinks">
               <span>View Drinks</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12"/>
@@ -256,7 +256,7 @@
             <p class="offering-card__desc">
               Host unforgettable weddings, birthdays, and corporate events in our grand halls with custom catering packages.
             </p>
-            <a href="#banquets" class="offering-card__link">
+            <a href="#menu" class="offering-card__link" data-target-tab="banquets">
               <span>View Spaces</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <line x1="5" y1="12" x2="19" y2="12"/>
@@ -631,7 +631,8 @@
 
       <!-- Bottom Bar -->
       <div class="footer__bottom">
-        <p class="footer__copyright">&copy; 2026 Garden Groves. All rights reserved.</p>
+        <p class="footer__copyright">&copy; <span id="copyrightYear">2026</span> Garden Groves. All rights reserved.</p>
+        <script>document.getElementById('copyrightYear').textContent = new Date().getFullYear();</script>
         <p class="footer__credit">Crafted by <strong>Aman Vishwakarma</strong></p>
       </div>
 
