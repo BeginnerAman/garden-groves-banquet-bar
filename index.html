@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Garden Groves — Family Restaurant, Bar &amp; Banquets</title>
+  <meta name="description" content="Garden Groves is a premium family restaurant, bar, and banquet venue offering an elegant nature-inspired dining experience. Book your table today." />
+  <meta name="keywords" content="Garden Groves, family restaurant, bar, banquets, fine dining, book a table" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Garden Groves — Family Restaurant, Bar & Banquets" />
+  <meta property="og:description" content="An elegant nature-inspired dining experience for the whole family." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>🌿</text></svg>" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container navbar__inner">
+
+      <!-- Logo -->
+      <a href="#home" class="navbar__logo" aria-label="Garden Groves — Home">
+        <!-- Inline SVG leaf icon -->
+        <svg class="navbar__logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 2C12 6 4 14 4 20c0 6 5.4 10 12 10s12-4 12-10C28 14 20 6 16 2zM14 24c-3-2-5-5.5-5-9 2 0 5 1.5 7 4.5-1-3.5 0-7 2-9.5 1.5 3 2.5 6.5 1.5 10 2-2 4.5-3.5 6-3.5-.5 4-3 7-6.5 8.5" />
+        </svg>
+        <span class="navbar__logo-text"><span>Garden</span> Groves</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="navbar__links">
+        <li><a href="#home"       class="navbar__link active">Home</a></li>
+        <li><a href="#restaurant" class="navbar__link">Restaurant</a></li>
+        <li><a href="#bar"        class="navbar__link">Bar</a></li>
+        <li><a href="#banquets"   class="navbar__link">Banquets</a></li>
+        <li><a href="#contact"    class="navbar__link">Contact</a></li>
+      </ul>
+
+      <!-- Desktop CTA -->
+      <a href="#book" class="navbar__cta navbar__cta-desktop" aria-label="Book a Table">
+        Book a Table
+        <!-- Arrow icon -->
+        <svg class="navbar__cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="13 6 19 12 13 18" />
+        </svg>
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button
+        class="navbar__hamburger"
+        id="navHamburger"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="navMobileMenu"
+      >
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Full-Screen Menu -->
+  <div class="navbar__mobile-menu" id="navMobileMenu" role="dialog" aria-label="Mobile navigation">
+    <a href="#home"       class="navbar__mobile-link">Home</a>
+    <span class="navbar__mobile-separator" aria-hidden="true"></span>
+    <a href="#restaurant" class="navbar__mobile-link">Restaurant</a>
+    <span class="navbar__mobile-separator" aria-hidden="true"></span>
+    <a href="#bar"        class="navbar__mobile-link">Bar</a>
+    <span class="navbar__mobile-separator" aria-hidden="true"></span>
+    <a href="#banquets"   class="navbar__mobile-link">Banquets</a>
+    <span class="navbar__mobile-separator" aria-hidden="true"></span>
+    <a href="#contact"    class="navbar__mobile-link">Contact</a>
+    <span class="navbar__mobile-separator" aria-hidden="true"></span>
+    <a href="#book"       class="navbar__mobile-link navbar__cta" style="margin-top: 0.5rem;">Book a Table</a>
+  </div>
+
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <section class="hero" id="home">
+    <!-- Animated gradient background -->
+    <div class="hero__bg" aria-hidden="true"></div>
+    <!-- Dark overlay for text readability -->
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <!-- Floating decorative particles -->
+    <div class="hero__particles" aria-hidden="true">
+      <span class="hero__particle"></span>
+      <span class="hero__particle"></span>
+      <span class="hero__particle"></span>
+      <span class="hero__particle"></span>
+      <span class="hero__particle"></span>
+      <span class="hero__particle"></span>
+    </div>
+
+    <div class="container hero__content">
+      <!-- Tagline -->
+      <p class="hero__tagline">Dine &bull; Drink &bull; Celebrate</p>
+
+      <!-- Headline -->
+      <h1 class="hero__title">
+        Welcome to
+        <span class="hero__title-accent">Garden Groves</span>
+      </h1>
+
+      <!-- Sub-headline -->
+      <p class="hero__subtitle">
+        A premium destination for unforgettable family dining,
+        crafted cocktails, and grand celebrations.
+      </p>
+
+      <!-- CTAs -->
+      <div class="hero__ctas">
+        <a href="#book" class="hero__btn hero__btn--primary">
+          <span>Book a Table</span>
+          <svg class="hero__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="13 6 19 12 13 18" />
+          </svg>
+        </a>
+        <a href="#banquets" class="hero__btn hero__btn--secondary">
+          <span>Plan an Event</span>
+          <svg class="hero__btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="hero__scroll-indicator" aria-hidden="true">
+      <span class="hero__scroll-text">Scroll</span>
+      <span class="hero__scroll-line"></span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       OFFERINGS SHOWCASE
+       ============================================================ -->
+  <section class="offerings" id="offerings">
+    <div class="container">
+
+      <!-- Section Header -->
+      <header class="section-header">
+        <div class="section-header__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 2C12 6 4 14 4 20c0 6 5.4 10 12 10s12-4 12-10C28 14 20 6 16 2zM14 24c-3-2-5-5.5-5-9 2 0 5 1.5 7 4.5-1-3.5 0-7 2-9.5 1.5 3 2.5 6.5 1.5 10 2-2 4.5-3.5 6-3.5-.5 4-3 7-6.5 8.5" fill="currentColor"/>
+          </svg>
+        </div>
+        <h2 class="section-header__title">Experience Garden Groves</h2>
+        <p class="section-header__subtitle">
+          Three distinct experiences under one roof, crafted for your finest moments.
+        </p>
+      </header>
+
+      <!-- Cards Grid -->
+      <div class="offerings__grid">
+
+        <!-- Card 1 — Restaurant -->
+        <article class="offering-card" id="restaurant">
+          <div class="offering-card__visual">
+            <div class="offering-card__bg"></div>
+            <svg class="offering-card__icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Fork & Knife -->
+              <path d="M20 6v14c0 3.3 2.7 6 6 6v26a2 2 0 004 0V26c3.3 0 6-2.7 6-6V6" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="22" y1="6" x2="22" y2="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="26" y1="6" x2="26" y2="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="30" y1="6" x2="30" y2="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M40 6c0 0-2 4-2 12s2 10 4 10v24a2 2 0 004 0V28c2 0 4-2 4-10s-2-12-2-12" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="offering-card__number">01</span>
+          </div>
+          <div class="offering-card__body">
+            <h3 class="offering-card__title">The Family Restaurant</h3>
+            <p class="offering-card__desc">
+              Savor authentic family recipes and global cuisines crafted by expert chefs in a warm, welcoming ambience.
+            </p>
+            <a href="#restaurant" class="offering-card__link">
+              <span>Explore Menu</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="13 6 19 12 13 18"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 2 — Bar -->
+        <article class="offering-card" id="bar">
+          <div class="offering-card__visual">
+            <div class="offering-card__bg"></div>
+            <svg class="offering-card__icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Cocktail Glass -->
+              <path d="M18 8h28L32 32V50" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="24" y1="50" x2="40" y2="50" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="18" y1="18" x2="46" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+              <!-- Lemon slice -->
+              <circle cx="43" cy="12" r="5" stroke="currentColor" stroke-width="2" fill="none"/>
+              <line x1="43" y1="8" x2="43" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="39" y1="12" x2="47" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="offering-card__number">02</span>
+          </div>
+          <div class="offering-card__body">
+            <h3 class="offering-card__title">The Lounge &amp; Bar</h3>
+            <p class="offering-card__desc">
+              Unwind with our signature artisanal cocktails, premium spirits, and vibrant music during our exclusive happy hours.
+            </p>
+            <a href="#bar" class="offering-card__link">
+              <span>View Drinks</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="13 6 19 12 13 18"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 3 — Banquets -->
+        <article class="offering-card" id="banquets">
+          <div class="offering-card__visual">
+            <div class="offering-card__bg"></div>
+            <svg class="offering-card__icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Champagne Toast -->
+              <path d="M18 8l6 22v20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M46 8l-6 22v20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <line x1="14" y1="50" x2="28" y2="50" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="36" y1="50" x2="50" y2="50" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Clink lines -->
+              <line x1="29" y1="16" x2="35" y2="16" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+              <!-- Sparkles -->
+              <line x1="32" y1="4" x2="32" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+              <line x1="26" y1="6" x2="28" y2="9" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+              <line x1="38" y1="6" x2="36" y2="9" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+              <circle cx="32" cy="2" r="1.5" fill="currentColor" opacity="0.5"/>
+            </svg>
+            <span class="offering-card__number">03</span>
+          </div>
+          <div class="offering-card__body">
+            <h3 class="offering-card__title">Grand Banquets</h3>
+            <p class="offering-card__desc">
+              Host unforgettable weddings, birthdays, and corporate events in our grand halls with custom catering packages.
+            </p>
+            <a href="#banquets" class="offering-card__link">
+              <span>View Spaces</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="13 6 19 12 13 18"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+      </div><!-- /.offerings__grid -->
+    </div><!-- /.container -->
+  </section>
+
+  <!-- Extra height so the page scrolls (will be replaced with real content) -->
+  <div class="content-placeholder" aria-hidden="true"></div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
